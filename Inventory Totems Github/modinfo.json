@@ -1,0 +1,11 @@
+{
+  "type": "code",
+  "modid": "inventorytotems",
+  "name": "Inventory Totems",
+  "authors": ["adams"],
+  "description": "Backpack-only passive and puzzle totems (orthogonal A→B→C→D chains, global by default; runtime scope toggle with /it scope perbag|global). Tier overrides, /it debug commands.",
+  "version": "0.2.8",
+  "dependencies": {
+    "game": "1.22.0"
+  }
+}

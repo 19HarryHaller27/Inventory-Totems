@@ -1,0 +1,9 @@
+{
+  "code": "totem-puzzle-a-t3",
+  "class": "ItemInventoryTotem",
+  "attributes": { "totemType": "puzzle", "piece": "a", "tier": 3 },
+  "maxstacksize": 1,
+  "shape": { "base": "game:item/stick" },
+  "textures": { "stick": { "base": "game:item/stick" } },
+  "creativeinventory": { "general": ["*"] }
+}

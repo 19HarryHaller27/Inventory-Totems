@@ -1,0 +1,59 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AssemblyName>InventoryTotems</AssemblyName>
+    <RootNamespace>InventoryTotems</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="VintagestoryAPI">
+      <HintPath>$(VintageStoryPath)\VintagestoryAPI.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+  <Target Name="PublishToModFolder" AfterTargets="Build">
+    <PropertyGroup>
+      <ModDir>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)'))</ModDir>
+    </PropertyGroup>
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(ModDir)" SkipUnchangedFiles="true" />
+    <Copy
+      SourceFiles="$(TargetDir)$(TargetName).pdb"
+      DestinationFolder="$(ModDir)"
+      SkipUnchangedFiles="true"
+      Condition="Exists('$(TargetDir)$(TargetName).pdb')" />
+  </Target>
+  <Target Name="DeployToVintageStoryData" AfterTargets="PublishToModFolder" Condition="'$(OS)' == 'Windows_NT' And '$(InventoryTotemsNoDeploy)' != 'true'">
+    <PropertyGroup>
+      <_Mods>$(UserProfile)\AppData\Roaming\VintagestoryData\Mods\InventoryTotems</_Mods>
+    </PropertyGroup>
+    <ItemGroup>
+      <_AssetFiles Include="$(MSBuildThisFileDirectory)assets\**\*.*" />
+    </ItemGroup>
+    <MakeDir Directories="$(_Mods)" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)InventoryTotems.dll" DestinationFolder="$(_Mods)" SkipUnchangedFiles="true" Condition="Exists('$(MSBuildThisFileDirectory)InventoryTotems.dll')" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)modinfo.json" DestinationFolder="$(_Mods)" SkipUnchangedFiles="true" />
+    <Copy
+      SourceFiles="@(_AssetFiles)"
+      DestinationFiles="@(_AssetFiles->'$(_Mods)\assets\%(RecursiveDir)%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true"
+      Condition="'@(_AssetFiles)' != ''" />
+  </Target>
+  <Target Name="PackageForMods" AfterTargets="PublishToModFolder">
+    <PropertyGroup>
+      <_ForMods>$(MSBuildThisFileDirectory)out\ForMods\</_ForMods>
+    </PropertyGroup>
+    <ItemGroup>
+      <_PackageAssets Include="$(MSBuildThisFileDirectory)assets\**\*.*" />
+    </ItemGroup>
+    <MakeDir Directories="$(_ForMods)" />
+    <Copy SourceFiles="$(TargetPath)" DestinationFolder="$(_ForMods)" SkipUnchangedFiles="true" Condition="Exists('$(TargetPath)')" />
+    <Copy SourceFiles="$(MSBuildThisFileDirectory)modinfo.json" DestinationFolder="$(_ForMods)" SkipUnchangedFiles="true" />
+    <Copy
+      SourceFiles="@(_PackageAssets)"
+      DestinationFiles="@(_PackageAssets->'$(_ForMods)assets\%(RecursiveDir)%(Filename)%(Extension)')"
+      SkipUnchangedFiles="true"
+      Condition="'@(_PackageAssets)' != ''" />
+  </Target>
+</Project>

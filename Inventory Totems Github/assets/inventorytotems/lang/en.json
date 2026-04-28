@@ -1,0 +1,35 @@
+{
+  "inventorytotems:item-totem-movespeed-t1": "Move Totem I",
+  "inventorytotems:itemdesc-totem-movespeed-t1": "Effect (backpack slots only — not hotbar): +5% walk speed and sprint speed vs base. Highest tier wins (this is tier I). Shows under Character » Stats as Walk speed (same stat as traits). Requires a worn backpack.",
+  "inventorytotems:item-totem-movespeed-t2": "Move Totem II",
+  "inventorytotems:itemdesc-totem-movespeed-t2": "Effect (backpack slots only): +10% walk and sprint speed. Overrides tier I if both are present. Shows on Walk speed in the Stats panel.",
+  "inventorytotems:item-totem-movespeed-t3": "Move Totem III",
+  "inventorytotems:itemdesc-totem-movespeed-t3": "Effect (backpack slots only): +15% walk and sprint speed. Overrides tiers I and II. Shows on Walk speed in the Stats panel.",
+
+  "inventorytotems:item-totem-puzzle-a-t1": "Puzzle Totem A I",
+  "inventorytotems:itemdesc-totem-puzzle-a-t1": "Puzzle chain starter (tier I). Alone it does nothing. With B (then C, D): same tier, each next piece orthogonally adjacent (up, down, left, right) on the computed slot grid — no diagonals. Default scope is global across backpack inner slots; use /it scope perbag for strict per-bag matching. Bonus max HP. Use /it layout, /it neighbors, and /it probe to verify.",
+  "inventorytotems:item-totem-puzzle-b-t1": "Puzzle Totem B I",
+  "inventorytotems:itemdesc-totem-puzzle-b-t1": "Place adjacent (up, down, left, or right) to matching tier I A on the computed puzzle grid. A+B grants tier I max HP bonus; longer chains grant more. Scope can be switched with /it scope perbag|global.",
+  "inventorytotems:item-totem-puzzle-c-t1": "Puzzle Totem C I",
+  "inventorytotems:itemdesc-totem-puzzle-c-t1": "Optional third piece: orthogonally adjacent to B (same tier), continuing the chain. Extends the HP bonus.",
+  "inventorytotems:item-totem-puzzle-d-t1": "Puzzle Totem D I",
+  "inventorytotems:itemdesc-totem-puzzle-d-t1": "Fourth piece: orthogonally adjacent to C (same tier). Strongest tier I puzzle HP bonus.",
+
+  "inventorytotems:item-totem-puzzle-a-t2": "Puzzle Totem A II",
+  "inventorytotems:itemdesc-totem-puzzle-a-t2": "Tier II puzzle starter. Chain only with B/C/D tier II pieces, each step orthogonally adjacent on the computed puzzle grid (scope set by /it scope).",
+  "inventorytotems:item-totem-puzzle-b-t2": "Puzzle Totem B II",
+  "inventorytotems:itemdesc-totem-puzzle-b-t2": "Tier II — orthogonally adjacent to tier II A on the computed puzzle grid.",
+  "inventorytotems:item-totem-puzzle-c-t2": "Puzzle Totem C II",
+  "inventorytotems:itemdesc-totem-puzzle-c-t2": "Tier II — orthogonally adjacent to B, same chain.",
+  "inventorytotems:item-totem-puzzle-d-t2": "Puzzle Totem D II",
+  "inventorytotems:itemdesc-totem-puzzle-d-t2": "Tier II — orthogonally adjacent to C; strongest tier II HP bonus.",
+
+  "inventorytotems:item-totem-puzzle-a-t3": "Puzzle Totem A III",
+  "inventorytotems:itemdesc-totem-puzzle-a-t3": "Tier III puzzle starter. Orthogonal chains with tier III B/C/D.",
+  "inventorytotems:item-totem-puzzle-b-t3": "Puzzle Totem B III",
+  "inventorytotems:itemdesc-totem-puzzle-b-t3": "Tier III — orthogonally adjacent to tier III A.",
+  "inventorytotems:item-totem-puzzle-c-t3": "Puzzle Totem C III",
+  "inventorytotems:itemdesc-totem-puzzle-c-t3": "Tier III — orthogonally adjacent to B.",
+  "inventorytotems:item-totem-puzzle-d-t3": "Puzzle Totem D III",
+  "inventorytotems:itemdesc-totem-puzzle-d-t3": "Tier III — orthogonally adjacent to C; strongest puzzle HP bonus."
+}

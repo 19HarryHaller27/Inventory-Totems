@@ -1,0 +1,8 @@
+{
+  "code": "totem-movespeed-t3",
+  "class": "ItemInventoryTotem",
+  "attributes": { "totemType": "passive", "stat": "movespeed", "tier": 3 },
+  "maxstacksize": 1,
+  "shape": { "base": "game:item/stick" },
+  "creativeinventory": { "general": ["*"] }
+}

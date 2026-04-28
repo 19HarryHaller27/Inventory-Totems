@@ -1,0 +1,9 @@
+{
+  "code": "totem-puzzle-b-t1",
+  "class": "ItemInventoryTotem",
+  "attributes": { "totemType": "puzzle", "piece": "b", "tier": 1 },
+  "maxstacksize": 1,
+  "shape": { "base": "game:item/stick" },
+  "textures": { "stick": { "base": "game:item/stick" } },
+  "creativeinventory": { "general": ["*"] }
+}
